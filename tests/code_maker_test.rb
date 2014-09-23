@@ -1,7 +1,3 @@
-  # def test_case_sensitivity
-  #   skip
-  # end
-
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
