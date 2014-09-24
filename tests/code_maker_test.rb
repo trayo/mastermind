@@ -25,7 +25,10 @@ class CodeMakerTest < Minitest::Test
   def test_it_makes_a_random_code
     code_maker1 = CodeMaker.new
     code_maker2 = CodeMaker.new
-    refute code_maker1.code == code_maker2.code
+    code_maker3 = CodeMaker.new
+    refute code_maker1.code == code_maker2.code &&
+           code_maker1.code == code_maker3.code &&
+           code_maker2.code == code_maker3.code
   end
 
 end
