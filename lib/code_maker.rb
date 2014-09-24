@@ -1,9 +1,3 @@
-# drive out correct colors in right spaces
-# def new method to calc colors in right spaces
-# def method for correct colors by removing correct
-# guesses from guess and code
-
-
 class CodeMaker
 
   attr_reader :code, :colors
