@@ -7,7 +7,7 @@ class InputGetter
   end
 
   def get
-    @input = gets.strip.downcase
+    @input = gets.downcase.strip
   end
 
 end

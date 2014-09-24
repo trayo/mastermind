@@ -12,6 +12,7 @@ class InputGetterTest < Minitest::Test
 
   def test_takes_an_input
     user_input = InputGetter.new
+    print "\nType 'hello' to test: "
     user_input.get
     assert_equal "hello", user_input.input
   end
