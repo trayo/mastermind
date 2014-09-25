@@ -1,6 +1,4 @@
-require_relative 'code_maker'
-
-class GuessChecker
+ class GuessChecker
 
   def self.compare(code, guess)
     if code == guess
