@@ -8,8 +8,9 @@ class CLI
   end
 
   def start
+    printer.welcome_message
     until quit?
-      printer.welcome_message
+      printer.start_screen
       printer.enter_command
       @user_input.get
       @user_input.input
