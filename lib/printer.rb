@@ -1,11 +1,13 @@
 class Printer
 
+  attr_reader :stdout
+
   def initialize(stdout)
     @stdout = stdout
   end
 
   def welcome_message
-    @stdout.puts "\nWelcome to MASTERMIND"
+    @stdout.puts "\n\nWelcome to MASTERMIND"
     start_screen
   end
 
@@ -30,11 +32,11 @@ class Printer
   end
 
   def quit
-    @stdout.puts "No! Don't go!"
+    @stdout.puts "\nNo! Don't go!"
   end
 
   def play
-    @stdout.puts "I have generated a beginner sequence with four elements made up of: " +
+    @stdout.puts "\nI have generated a beginner sequence with four elements made up of: " +
                  "(r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game."
   end
 
@@ -43,8 +45,8 @@ class Printer
     @stdout.puts "You've taken #{guesses} guesses."
   end
 
-  def winner
-    @stdout.puts "You win! You guessed the correct code '#{code}' in #{guesses} guesses."
+  def winner(code, guesses)
+    @stdout.puts "\n\nYou win! You guessed the correct code '#{code}' in #{guesses} guesses."
   end
 
   def enter_cheat_code

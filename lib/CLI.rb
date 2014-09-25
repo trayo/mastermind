@@ -2,9 +2,9 @@ class CLI
 
   attr_reader :user_input, :printer
 
-  def initialize
+  def initialize(stdout)
     @user_input = InputGetter.new
-    @printer = Printer.new
+    @printer = Printer.new(stdout)
   end
 
   def start
@@ -15,12 +15,12 @@ class CLI
       @user_input.input
       case
       when play?
-        game = Game.new(@user_input)
+        game = Game.new(@user_input, @printer)
         game.play
       when cheat_code?
         printer.enter_cheat_code
         cheat_code = gets.strip
-        game = Game.new(@user_input, CodeMaker.new(cheat_code))
+        game = Game.new(@user_input, @printer, CodeMaker.new(cheat_code))
         game.play
       when instructions?
         printer.instructions

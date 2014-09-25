@@ -6,8 +6,8 @@ class Game
               :guesses,
               :win_condition
 
-  def initialize(input_getter_from_CLI, code_maker = nil)
-    @printer = Printer.new
+  def initialize(input_getter_from_CLI, printer_from_CLI, code_maker = nil)
+    @printer = printer_from_CLI
     @code_maker = code_maker || CodeMaker.new
     @guesses = []
     @user_input = input_getter_from_CLI
@@ -20,18 +20,19 @@ class Game
     printer.play
     until win? || quit?
       printer.make_guess
-      @user_input.get
+      user_input.get
       case
       when quit?
         printer.quit
-      when @user_input.input.length != 4
+      when user_input.input.length != 4
         printer.invalid_input
       when win?
-        printer.winner
+        guesses << 1 if guesses.length == 0
+        printer.winner(code_maker.code, guesses.length)
       else
-        guesses << @user_input.input
+        guesses << user_input.input
         results_array = GuessChecker.compare(code_maker.code, @user_input.input)
-        printer.response(@user_input.input, results_array, guesses.length)
+        printer.response(user_input.input, results_array, guesses.length)
       end
 
     end
@@ -42,12 +43,12 @@ class Game
   private
 
   def win?
-    results_array = GuessChecker.compare(code_maker.code, @user_input.input)
+    results_array = GuessChecker.compare(code_maker.code, user_input.input)
     results_array == win_condition
   end
 
   def quit?
-    @user_input.input == 'q' || @user_input.input == 'quit'
+    user_input.input == 'q' || user_input.input == 'quit'
   end
 
 end
