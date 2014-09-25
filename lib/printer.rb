@@ -19,7 +19,8 @@ class Printer
   end
 
   def instructions
-    @stdout.puts "Here lies Instructions, may he rest in peace."
+    @stdout.puts "The game will generate a sequence with four elements made up of: " +
+                 "(r)ed, (g)reen, (b)lue, and (y)ellow. It will look like 'rybg'."
   end
 
   def make_guess
@@ -30,13 +31,21 @@ class Printer
     @stdout.puts "Invalid input. Please try again."
   end
 
+  def input_too_long
+    @stdout.puts "Input too long. Try again."
+  end
+
+  def input_too_short
+    @stdout.puts "Input too short. Try again."
+  end
+
   def quit
     @stdout.puts "\nNo! Don't go!"
   end
 
   def play
-    @stdout.puts "\nI have generated a beginner sequence with four elements made up of: " +
-                 "(r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game."
+    @stdout.puts "\nI have made the code!
+                  Use (q)uit at any time to end the game."
   end
 
   def response(input, results, guesses)
