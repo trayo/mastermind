@@ -10,19 +10,12 @@ class CLI
   def start
     printer.welcome_message
     until quit?
-      printer.start_screen
-      printer.enter_command
-      @user_input.get
-      @user_input.input
+      start_screen
       case
       when play?
-        game = Game.new(@user_input, @printer)
-        game.play
+        game_start
       when cheat_code?
-        printer.enter_cheat_code
-        cheat_code = gets.strip
-        game = Game.new(@user_input, @printer, CodeMaker.new(cheat_code))
-        game.play
+        secret_game_start
       when instructions?
         printer.instructions
       when quit?
@@ -37,12 +30,20 @@ class CLI
 
   private
 
-  def play?
-    @user_input.input == 'p' || @user_input.input == 'play'
+  def game_start
+    game = Game.new(@user_input, @printer)
+    game.play
   end
 
-  def cheat_code?
-    @user_input.input == 'uuddlrlrba'
+  def start_screen
+      printer.start_screen
+      printer.enter_command
+      @user_input.get
+      @user_input.input
+  end
+
+  def play?
+    @user_input.input == 'p' || @user_input.input == 'play'
   end
 
   def instructions?
@@ -51,6 +52,17 @@ class CLI
 
   def quit?
     @user_input.input == 'q' || @user_input.input == 'quit'
+  end
+
+  def cheat_code?
+    @user_input.input == 'uuddlrlrba'
+  end
+
+  def secret_game_start
+    printer.enter_cheat_code
+    cheat_code = gets.strip
+    game = Game.new(@user_input, @printer, CodeMaker.new(cheat_code))
+    game.play
   end
 
 end
