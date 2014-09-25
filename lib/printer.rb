@@ -8,15 +8,14 @@ class Printer
 
   def welcome_message
     @stdout.puts "\n\nWelcome to MASTERMIND"
-    start_screen
   end
 
   def start_screen
-    @stdout.puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
+    @stdout.puts "\nWould you like to (p)lay, read the (i)nstructions, or (q)uit?"
   end
 
   def enter_command
-    @stdout.print "\nEnter a command (Ex:'p' for play): "
+    @stdout.print "\nEnter a command: "
   end
 
   def instructions
@@ -24,7 +23,7 @@ class Printer
   end
 
   def make_guess
-    @stdout.print "\nMake a guess (Ex:'rrrr'): "
+    @stdout.print "\nMake a guess: "
   end
 
   def invalid_input

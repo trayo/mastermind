@@ -25,7 +25,7 @@ class PrinterTest < Minitest::Test
 
   def test_enter_command
     printer.welcome_message
-    mock_stdout.string.include?("Enter a command (Ex:'p' for play): ")
+    mock_stdout.string.include?("Enter a command: ")
   end
 
   def test_instructions
@@ -35,7 +35,7 @@ class PrinterTest < Minitest::Test
 
   def test_make_guess
     printer.welcome_message
-    mock_stdout.string.include?("Make a guess (Ex:'rrrr'): ")
+    mock_stdout.string.include?("Make a guess: ")
   end
 
   def test_invalid_input
