@@ -44,17 +44,18 @@ class Printer
   end
 
   def play
-    @stdout.puts "\nI have made the code!
-                  Use (q)uit at any time to end the game."
+    @stdout.puts "\nI have made the code!" +
+                 "\nUse (q)uit at any time to end the game."
   end
 
   def response(input, results, guesses)
-    @stdout.puts "'#{input}' has #{results[1]} of the correct colors with #{results[0]} in the correct positions."
+    @stdout.puts "\n\n'#{input}' has #{results[1]} of the correct colors with #{results[0]} in the correct positions."
     @stdout.puts "You've taken #{guesses} guesses."
   end
 
   def winner(code, guesses)
     @stdout.puts "\n\nYou win! You guessed the correct code '#{code}' in #{guesses} guesses."
+
   end
 
   def enter_cheat_code
