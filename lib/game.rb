@@ -27,7 +27,6 @@ class Game
       when user_input.input.length != 4
         printer.invalid_input
       when win?
-        guesses << 1 if guesses.length == 0
         printer.winner(code_maker.code, guesses.length)
       else
         guesses << user_input.input
@@ -43,6 +42,7 @@ class Game
   private
 
   def win?
+    guesses << 1 if guesses.length == 0
     results_array = GuessChecker.compare(code_maker.code, user_input.input)
     results_array == win_condition
   end
