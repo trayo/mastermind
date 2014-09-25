@@ -16,6 +16,7 @@ class Game
     # [correct_positions, correct_colors
     @results_array = []
     @win_condition = [4, 0]
+
   end
 
   def play
@@ -26,12 +27,17 @@ class Game
       case
       when quit?
         printer.quit
-      when user_input.input.length != 4
+      when input_too_short?
+        printer.input_too_short
+      when input_too_long?
+        printer.input_too_long
+      when not_valid_colors?
         printer.invalid_input
       when win? && guesses.length == 0
         guesses << 1 if guesses.length == 0
         printer.winner(code_maker.code, guesses.length)
       when win?
+        guesses << user_input.input
         printer.winner(code_maker.code, guesses.length)
       else
         process_results
@@ -48,6 +54,20 @@ class Game
   def process_results
     guesses << user_input.input
     @results_array = GuessChecker.compare(code_maker.code, @user_input.input)
+  end
+
+  def not_valid_colors?
+    temp = user_input.input.chars
+    @code_maker.colors.each {|char| temp.delete(char)}
+    !temp.empty?
+  end
+
+  def input_too_short?
+    user_input.input.length < 4
+  end
+
+  def input_too_long?
+    user_input.input.length > 4
   end
 
   def win?

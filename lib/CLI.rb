@@ -23,9 +23,7 @@ class CLI
       else
         printer.invalid_input
       end
-
     end
-
   end
 
   private
