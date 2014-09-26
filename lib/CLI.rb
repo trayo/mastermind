@@ -1,10 +1,11 @@
 class CLI
 
-  attr_reader :user_input, :printer
+  attr_reader :user_input,
+              :printer
 
   def initialize(stdout)
     @user_input = InputGetter.new
-    @printer = Printer.new(stdout)
+    @printer    = Printer.new(stdout)
   end
 
   def start
@@ -12,16 +13,11 @@ class CLI
     until quit?
       start_screen
       case
-      when play?
-        game_start
-      when cheat_code?
-        secret_game_start
-      when instructions?
-        printer.instructions
-      when quit?
-        printer.quit
-      else
-        printer.invalid_input
+      when play?         then game_start
+      when cheat_code?   then secret_game_start
+      when instructions? then printer.instructions
+      when quit?         then printer.quit
+      else                    printer.invalid_input
       end
     end
   end

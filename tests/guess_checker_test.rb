@@ -1,5 +1,6 @@
 gem 'minitest'
 require 'minitest/autorun'
+
 require 'minitest/pride'
 require_relative '../lib/guess_checker'
 require_relative '../lib/code_maker'

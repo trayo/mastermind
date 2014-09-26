@@ -8,12 +8,12 @@ class Game
               :results_array
 
   def initialize(input_getter_from_CLI, printer_from_CLI, code_maker = nil)
-    @printer = printer_from_CLI
-    @code_maker = code_maker || CodeMaker.new
-    @guesses = []
-    @user_input = input_getter_from_CLI
+    @printer       = printer_from_CLI
+    @code_maker    = code_maker || CodeMaker.new
+    @guesses       = []
+    @user_input    = input_getter_from_CLI
     # The win_condition array evaluates to
-    # [correct_positions, correct_colors
+    # [correct_positions, correct_colors]
     @results_array = []
     @win_condition = [4, 0]
 
@@ -25,14 +25,10 @@ class Game
       printer.make_guess
       user_input.get
       case
-      when quit?
-        printer.quit
-      when input_too_short?
-        printer.input_too_short
-      when input_too_long?
-        printer.input_too_long
-      when not_valid_colors?
-        printer.invalid_input
+      when quit?              then printer.quit
+      when input_too_short?   then printer.input_too_short
+      when input_too_long?    then printer.input_too_long
+      when not_valid_colors?  then printer.invalid_input
       when win? && guesses.length == 0
         guesses << 1 if guesses.length == 0
         printer.winner(code_maker.code, guesses.length)
