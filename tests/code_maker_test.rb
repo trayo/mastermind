@@ -13,7 +13,8 @@ class CodeMakerTest < Minitest::Test
   def test_new_code_is_only_red_blue_green_or_yellow
     code_maker = CodeMaker.new
     code_maker.code.chars.each do |color|
-      assert ['r', 'g', 'y', 'b'].include? color
+    # assert ['r', 'g', 'y', 'b'].include? color
+    assert %W(r g b y).include? color
     end
   end
 
