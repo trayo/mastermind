@@ -10,7 +10,9 @@ class CodeMaker
   private
 
   def generate_code
-    4.times.map {colors.sample}.join
+    4.times.map do
+      colors.sample
+    end.join
   end
 
 end

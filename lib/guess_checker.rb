@@ -24,6 +24,7 @@
     code.chars.uniq.count do |char|
       guess.include?(char)
     end
+
   end
 
 end
