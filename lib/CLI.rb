@@ -3,8 +3,8 @@ class CLI
   attr_reader :user_input,
               :printer
 
-  def initialize(stdout)
-    @user_input = InputGetter.new
+  def initialize(stdout, stdin)
+    @user_input = InputGetter.new(stdin)
     @printer    = Printer.new(stdout)
   end
 
