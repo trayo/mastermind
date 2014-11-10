@@ -1,5 +1,4 @@
 class CodeMaker
-
   attr_reader :code, :colors
 
   def initialize(code = nil)
@@ -14,5 +13,4 @@ class CodeMaker
       colors.sample
     end.join
   end
-
 end
