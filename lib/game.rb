@@ -16,7 +16,6 @@ class Game
     # [correct_positions, correct_colors]
     @results_array = []
     @win_condition = [4, 0]
-
   end
 
   def play
@@ -39,11 +38,8 @@ class Game
         process_results
         printer.response(user_input.input, results_array, guesses.length)
       end
-
     end
-
   end
-
 
   private
 

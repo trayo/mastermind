@@ -7,6 +7,7 @@ class Printer
   end
 
   def welcome_message
+    @stdout.puts clear_screen
     @stdout.puts "\n\nWelcome to MASTERMIND"
   end
 
@@ -60,6 +61,10 @@ class Printer
 
   def enter_cheat_code
     @stdout.print "Enter cheat code: "
+  end
+
+  def clear_screen
+    print "\e[2J\e[f"
   end
 
 end

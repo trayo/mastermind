@@ -2,12 +2,12 @@ class InputGetter
 
   attr_reader :input
 
-  def initialize
-    @input = ""
+  def initialize(stdin)
+    @stdin = stdin
   end
 
   def get
-    @input = gets.downcase.strip
+    @input = @stdin.gets.downcase.strip
   end
 
 end
