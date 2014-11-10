@@ -8,7 +8,6 @@ class InputGetter
 
   def get
     @input = @stdin.gets.downcase.strip
-    # $stdin.gets.downcase.strip
   end
 
 end
