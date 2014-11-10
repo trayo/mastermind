@@ -14,12 +14,12 @@
 
   private
 
-  def self.find_correct_positions(code, guess)
+  def find_correct_positions(code, guess)
     positions = code.chars.zip(guess.chars)
     positions.count {|x, y| x == y}
   end
 
-  def self.find_correct_colors(code, guess)
+  def find_correct_colors(code, guess)
     code.chars.uniq.count do |char|
       guess.include?(char)
     end
