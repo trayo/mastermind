@@ -16,8 +16,7 @@
 
   def self.find_correct_positions(code, guess)
     positions = code.chars.zip(guess.chars)
-    positions = positions.select {|x, y| x == y}
-    positions.length
+    positions.count {|x, y| x == y}
   end
 
   def self.find_correct_colors(code, guess)
