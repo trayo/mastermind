@@ -1,4 +1,4 @@
- class GuessChecker
+class GuessChecker
 
   def self.compare(code, guess)
     if code == guess
@@ -12,18 +12,20 @@
     return [correct_positions, correct_colors]
   end
 
+  def thing(x, y)
+    find_correct_positions(x, y)
+  end
+
   private
 
-  def find_correct_positions(code, guess)
+  def self.find_correct_positions(code, guess)
     positions = code.chars.zip(guess.chars)
     positions.count {|x, y| x == y}
   end
 
-  def find_correct_colors(code, guess)
+  def self.find_correct_colors(code, guess)
     code.chars.uniq.count do |char|
       guess.include?(char)
     end
-
   end
-
 end

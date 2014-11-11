@@ -64,7 +64,6 @@ class Printer
   end
 
   def clear_screen
-    print "\e[2J\e[f"
-  end
+    print "\e[2J\e[f" end
 
 end

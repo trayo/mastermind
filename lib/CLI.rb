@@ -1,5 +1,4 @@
 class CLI
-
   attr_reader :user_input,
               :printer
 
@@ -58,5 +57,4 @@ class CLI
     game = Game.new(@user_input, @printer, CodeMaker.new(cheat_code))
     game.play
   end
-
 end
