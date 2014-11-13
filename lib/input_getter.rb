@@ -1,5 +1,4 @@
 class InputGetter
-
   attr_reader :input
 
   def initialize(stdin)
@@ -9,5 +8,4 @@ class InputGetter
   def get
     @input = @stdin.gets.downcase.strip
   end
-
 end

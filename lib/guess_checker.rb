@@ -12,10 +12,6 @@ class GuessChecker
     return [correct_positions, correct_colors]
   end
 
-  def thing(x, y)
-    find_correct_positions(x, y)
-  end
-
   private
 
   def self.find_correct_positions(code, guess)

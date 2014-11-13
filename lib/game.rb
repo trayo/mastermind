@@ -1,5 +1,4 @@
 class Game
-
   attr_reader :user_input,
               :printer,
               :code_maker,
