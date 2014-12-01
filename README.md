@@ -1,3 +1,3 @@
 ## Hello World!
 
-hello these are some words!
+These are some words!
