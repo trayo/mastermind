@@ -11,8 +11,6 @@ class Game
     @code_maker    = code_maker || CodeMaker.new
     @guesses       = []
     @user_input    = input_getter_from_CLI
-    # The win_condition array evaluates to
-    # [correct_positions, correct_colors]
     @results_array = []
     @win_condition = [4, 0]
   end
