@@ -1,11 +1,11 @@
-## Hello World!
+# Hello World!
 
-These are some words!
+Welcome to my version of Mastermind written while I attended
+Turing School of Software and Design.
 
-hwllo there
+## How to play
 
+Clone the repo to your local machine.
 
-other stuff
+cd into the directory you cloned it to and run `ruby mastermind.rb`
 
-
-hey!
