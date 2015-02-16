@@ -7,7 +7,7 @@ This project uses Ruby to build an implementation of the classic game [Mastermin
 Clone the repo to your local machine with:  
   `git clone https://github.com/trayo/mastermind/`
 
-Change directories in to the project with:  
+Change directories into the project with:  
   `cd mastermind`
   
 Run it with:  
