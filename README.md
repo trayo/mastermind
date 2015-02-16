@@ -1,5 +1,6 @@
 # Mastermind
 
+
 This project uses Ruby to build an implementation of the classic game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)).
 
 ## How to play
