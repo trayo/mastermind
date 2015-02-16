@@ -1,5 +1,6 @@
 # Mastermind
 
+[![Code Climate](https://codeclimate.com/github/trayo/mastermind/badges/gpa.svg)](https://codeclimate.com/github/trayo/mastermind)
 
 This project uses Ruby to build an implementation of the classic game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)).
 
